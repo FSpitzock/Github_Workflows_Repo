@@ -15,9 +15,12 @@ app.get('/', (_req, res) => {
 
 // TODO: Add GET /health route.
 // It should return status 200 and this JSON body:
-{ 
-  "status": "ok", 
-  "service": "node-workflow-demo'"
-}
+app.get('/health', (_req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    service: 'node-workflow-demo'
+  });
+});
+
 
 module.exports = app;
